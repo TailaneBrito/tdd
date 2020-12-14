@@ -4,7 +4,9 @@ describe.only('the fahrenheit to celsius canary spec', () => {
    });
 
 describe('fahrenheit to celsius converter behaves as follows', () => {
-	it('212 degress fahrehit is 100 degrees celsius');
+	it('212 degress fahrehit is 100 degrees celsius', () => {
+		fahreheint2celsius(212).should.be.equal(100);
+	});
 	it('32 degrees fahrenheit is 0 degrees celsius');
 	it('50 degrees fahreheint is 10 degress celsius');
 });
