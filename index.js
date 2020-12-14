@@ -9,5 +9,5 @@ describe('fahrenheit to celsius converter behaves as follows', () => {
 	it('50 degrees fahreheint is 10 degress celsius');
 });
   
-)};
+});
 	
