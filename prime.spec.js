@@ -2,10 +2,8 @@ function primeNumbers(number){
 	let factor = number;
 	let primeFactors = [];
 	
-	if (factor > 1){
-		for (; factor % 2 === 0; factor /= 2) primeFactors.push(2);			
-		for (; factor % 3 === 0; factor /= 3) primeFactors.push(3);			
-		if(factor > 1 ) primeFactors.push(factor);
+	for (let divisor = 2; factor > 1; divisor++){
+		for (; factor % divisor === 0; factor /= divisor) primeFactors.push(divisor);
 	}
 	return primeFactors;
 }
@@ -54,6 +52,10 @@ describe('prime numbers canary spec', () => {
 		});
 		it('for 10 return [2,5]', () => {
 			expect(primeNumbers(10)).toStrictEqual([2,5]);
+				
+		});
+		it('for 25 return [5,5]', () => {
+			expect(primeNumbers(25)).toStrictEqual([5,5]);
 				
 		});
 	});
