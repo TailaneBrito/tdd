@@ -34,7 +34,10 @@ describe('prime numbers canary spec', () => {
 			expect(primeNumbers(4)).toStrictEqual([2,2]);
 				
 		});
-		it.todo('for 5 return [5]');
+		it('for 5 return [5]', () => {
+			expect(primeNumbers(5)).toStrictEqual([5]);
+				
+		});
 		it.todo('for 6 return [2,3]');
 		it.todo('for 7 return [7]');
 		it.todo('for 8 return [2,2,2]');
