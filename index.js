@@ -1,6 +1,5 @@
 function fahreheint2celsius(fahreheint){
-	if (fahreheint === 32) return 0;
-	return 100;
+	return (fahreheint - 32) * 5 / 9;
 }
 
 describe.only('the fahrenheit to celsius canary spec', () => {
@@ -17,7 +16,9 @@ describe('fahrenheit to celsius converter behaves as follows', () => {
 		fahreheint2celsius(32).should.be.equal(0);
 	});
 	
-	it('50 degrees fahreheint is 10 degress celsius');
+	it('50 degrees fahreheint is 10 degress celsius', () => {
+		fahreheint2celsius(50).should.be.equal(10);
+	});
 });
 	//error message should drive what we do. no more writting code to resolve the issue.
 	// four rules for simple design.
