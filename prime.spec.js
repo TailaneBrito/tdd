@@ -1,6 +1,15 @@
 function primeNumbers(number){
-	if (number > 1) return [number];
-	return [];
+	let factor = number;
+	let primeFactors = [];
+	
+	if (factor > 1){
+		if (factor % 2 === 0){
+			primeFactors.push(2);
+			factor /= 2;
+		}
+		if(factor > 1 ) primeFactors.push(factor);
+	}
+	return primeFactors;
 }
 
 describe('prime numbers canary spec', () => {
@@ -21,7 +30,10 @@ describe('prime numbers canary spec', () => {
 			expect(primeNumbers(3)).toStrictEqual([3]);
 				
 		});
-		it.todo('for 4 return [2,2]');
+		it('for 4 return [2,2]', () => {
+			expect(primeNumbers(4)).toStrictEqual([2,2]);
+				
+		});
 		it.todo('for 5 return [5]');
 		it.todo('for 6 return [2,3]');
 		it.todo('for 7 return [7]');
