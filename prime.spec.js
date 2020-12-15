@@ -54,8 +54,12 @@ describe('prime numbers canary spec', () => {
 			expect(primeNumbers(10)).toStrictEqual([2,5]);
 				
 		});
-		it('for 25 return [5,5]', () => {
-			expect(primeNumbers(25)).toStrictEqual([5,5]);
+		it('for 864 return [2,2,2,2,2,3,3,3]', () => {
+			expect(primeNumbers(864)).toStrictEqual([2,2,2,2,2,3,3,3]);
+				
+		});
+		it('for 997 return [997]', () => {
+			expect(primeNumbers(997)).toStrictEqual([997]);
 				
 		});
 	});
