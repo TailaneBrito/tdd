@@ -3,10 +3,8 @@ function primeNumbers(number){
 	let primeFactors = [];
 	
 	if (factor > 1){
-		if (factor % 2 === 0){
-			primeFactors.push(2);
-			factor /= 2;
-		}
+		for (; factor % 2 === 0; factor /= 2) primeFactors.push(2);			
+		for (; factor % 3 === 0; factor /= 3) primeFactors.push(3);			
 		if(factor > 1 ) primeFactors.push(factor);
 	}
 	return primeFactors;
@@ -38,11 +36,26 @@ describe('prime numbers canary spec', () => {
 			expect(primeNumbers(5)).toStrictEqual([5]);
 				
 		});
-		it.todo('for 6 return [2,3]');
-		it.todo('for 7 return [7]');
-		it.todo('for 8 return [2,2,2]');
-		it.todo('for 9 return [3,3]');
-		it.todo('for 10 return [2,5]');
+		it('for 6 return [2,3]', () => {
+			expect(primeNumbers(6)).toStrictEqual([2,3]);
+				
+		});
+		it('for 7 return [7]', () => {
+			expect(primeNumbers(7)).toStrictEqual([7]);
+				
+		});
+		it('for 8 return [2,2,2]', () => {
+			expect(primeNumbers(8)).toStrictEqual([2,2,2]);
+				
+		});
+		it('for 9 return [3,3]', () => {
+			expect(primeNumbers(9)).toStrictEqual([3,3]);
+				
+		});
+		it('for 10 return [2,5]', () => {
+			expect(primeNumbers(10)).toStrictEqual([2,5]);
+				
+		});
 	});
 
 
